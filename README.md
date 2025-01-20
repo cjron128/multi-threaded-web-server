@@ -36,16 +36,12 @@ curl http://localhost:8080/
 
 ### Chat System
 
-POST /messages
-
-Description: Sends a message to the chat.
-
+POST /messages  
+Description: Sends a message to the chat.  
 Example: curl -X POST -d "Hello, World!" http://localhost:8080/messages
 
-GET /messages
-
-Description: Retrieves the next message from the chat. Blocks until a message is available.
-
+GET /messages  
+Description: Retrieves the next message from the chat. Blocks until a message is available.  
 Example: curl -X GET http://localhost:8080/messages
 
 ## Build and Run

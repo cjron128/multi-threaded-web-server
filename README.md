@@ -29,10 +29,9 @@ Messages are managed using a mutex-protected queue to handle multiple clients co
 
 ### Static File Hosting
 
-URL: /
-Description: Serves the index.html file and other static assets.
-Example:
-curl http://localhost:8080/
+URL: /  
+Description: Serves the index.html file and other static assets.  
+Example: curl http://localhost:8080/
 
 ### Chat System
 
@@ -53,29 +52,25 @@ Ensure you have gcc installed. Then run: make
 ### Run the Server
 
 Start the server on a specific port (e.g., 8080): ./web_server 8080
-Open the Frontend
-Navigate to http://localhost:8080/ in your web browser.
 
+### Open the Frontend
+
+Navigate to http://localhost:8080/ in your web browser.
 
 ## How It Works
 
 ### Frontend Interaction
 
 The frontend uses JavaScript to:
-
-Send messages to the server via POST /messages.
-Retrieve new messages via long-polling with GET /messages.
+1. Send messages to the server via POST /messages.
+2. Retrieve new messages via long-polling with GET /messages.
 
 ### Server Logic
 
-A new thread is spawned for each client connection.
+A new thread is spawned for each client connection.  
 Messages are stored in a thread-safe queue and distributed to connected clients.
 
 ### Multi-Threading
 
-The server uses pthread for concurrency.
-Mutexes and condition variables ensure thread-safe message handling.
-Future Improvements
-Add WebSocket support for more efficient real-time communication.
-Implement user authentication.
-Add message persistence using a database.
+The server uses pthread for concurrency.  
+Mutexes and condition variables ensure thread-safe message handling.  
